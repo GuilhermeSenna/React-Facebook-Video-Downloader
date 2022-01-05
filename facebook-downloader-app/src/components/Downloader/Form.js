@@ -1,3 +1,4 @@
+import Input from '../UI/Input';
 import styles from './Form.module.css'
 
 const Form = () => {
@@ -8,8 +9,9 @@ const Form = () => {
                 <label>
                     Link do download
                 </label>
-                <input type="text">
-                </input>
+                <Input atributes ={{
+                    type: "text"
+                }}/>
              </div>
          </form>
         </>
