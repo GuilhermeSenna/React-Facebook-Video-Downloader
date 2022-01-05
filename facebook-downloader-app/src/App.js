@@ -27,11 +27,15 @@ const App = () => {
       clearInterval(interval);
     }
   }, [progress]);
+
+
   return (
    <>
     <h1 className={styles.title}>Facebook Downloader</h1>
     <Card >
       <Form />
+      <p>Está rodando - {running.toString()}</p>
+      <p>Progress - {progress}</p>
       <ProgressBar progress={progress}/>
 
       <button
