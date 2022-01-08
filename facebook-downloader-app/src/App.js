@@ -1,21 +1,36 @@
 import logo from './logo.svg';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styles from './App.module.css';
 import Card from './components/UI/Card';
 import Form from './components/Downloader/Form';
 import { ProgressBar } from './components/UI/ProgressBar.css';
+import LinkContext from './store/link-context';
 
 let interval = undefined;
 
 const App = () => {
+
+
+  const ctx = useContext(LinkContext)
+
+  useEffect(() => {
+    if (ctx.isTyping) {
+      setProgress(0)
+      setRunning(true);
+      ctx.onStopTyping();
+    }
+  }, [ctx.isTyping])
+
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState(0);
+
+
 
   useEffect(() => {
     if (running) {
       interval = setInterval(() => {
         setProgress((prev) => prev + 1);
-      }, 10);
+      }, 20);
     } else {
       clearInterval(interval);
     }
@@ -30,27 +45,32 @@ const App = () => {
 
 
   return (
-   <>
-    <h1 className={styles.title}>Facebook Downloader</h1>
-    <Card >
-      <Form />
-      <p>Está rodando - {running.toString()}</p>
-      <p>Progress - {progress}</p>
-      <ProgressBar progress={progress}/>
+    <>
+      <h1 className={styles.title}>Facebook Downloader</h1>
+      <Card >
+        <Form />
+        {/* <p>Está rodando - {running.toString()}</p>
+        <p>Progress - {progress}</p> */}
 
-      <button
-        onClick={() => {
-          setRunning(false);
-          setProgress(0);
-        }}
-      >
-        Clear
-      </button>
-      <button onClick={() => setRunning(!running)}>
-        {running ? "Stop" : "Start"}
-      </button>
-    </Card>
-   </>
+        {running ? 'Aguardando esperar de digitar' : ''}
+        <ProgressBar progress={progress} />
+
+        <button
+          onClick={() => {
+            setRunning(false);
+            setProgress(0);
+          }}
+        >
+          Clear
+        </button>
+        <button onClick={() => setRunning(!running)}>
+          {running ? "Stop" : "Start"}
+        </button>
+
+
+        <p>{ctx.isTyping ? 'Está digitando' : 'Não está digitando'}</p>
+      </Card>
+    </>
   );
 }
 

@@ -8,6 +8,7 @@ export const ProgressBarContainer = styled.div`
 
 export const ProgressBar = styled.div`
   width: ${({ progress }) => `${progress}%`};
-  height: 50px;
+  height: 20px;
+  border-radius: 10px;
   background: dodgerblue;
 `;
