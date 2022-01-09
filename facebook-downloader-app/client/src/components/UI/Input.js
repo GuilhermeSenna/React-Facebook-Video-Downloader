@@ -11,7 +11,7 @@ const Input = props => {
 
     const onChangeHandler = (link) => {
         setLink(link)
-        linkCtx.onStartTyping();
+        linkCtx.onStartTyping(link);
     }
 
     const onResetHandler = () => {

@@ -40,6 +40,8 @@ const App = () => {
     if (progress === 100) {
       // Search for video
 
+      console.log(ctx.link);
+
       setRunning(false);
       clearInterval(interval);
     }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // // Initial Context
 const LinkContext = React.createContext({
+    link: '',
     isTyping: false,
     onStartTyping: () => { },
     onStopTyping: () => { },
@@ -10,9 +11,11 @@ const LinkContext = React.createContext({
 
 export const LinkContextProvider = props => {
 
+    const [link, setLink] = useState('');
     const [isTyping, setIsTyping] = useState(false);
 
-    const onStartTyping = () => {
+    const onStartTyping = link => {
+        setLink(link)
         setIsTyping(true);
     }
 
@@ -21,6 +24,7 @@ export const LinkContextProvider = props => {
     }
 
     return <LinkContext.Provider value={{
+        link: link,
         isTyping: isTyping,
         onStartTyping: onStartTyping,
         onStopTyping: onStopTyping
