@@ -13,11 +13,21 @@ body {
 
 .title {
   color: #FFC900;
+  margin: 1rem;
   font-weight: bolder;
   text-align: center;
   font-size: 4rem;
   text-shadow: -1px -1px 0 #086E7D, 1px -1px 0 #086E7D, -1px 1px 0 #086E7D, 1px 1px 0 #086E7D;
 }
+
+.subtitle {
+  color: #FFC900;
+  font-weight:lighter;
+  text-align: center;
+  font-size: 1.4rem;
+  text-shadow: -1px -1px 0 #086E7D, 1px -1px 0 #086E7D, -1px 1px 0 #086E7D, 1px 1px 0 #086E7D;
+}
+
 
 .card-style {
   background-color: #2F3A8F;
@@ -28,4 +38,15 @@ body {
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+  color: lightslategray;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

@@ -38,6 +38,8 @@ const App = () => {
 
   useEffect(() => {
     if (progress === 100) {
+      // Search for video
+
       setRunning(false);
       clearInterval(interval);
     }
@@ -46,16 +48,22 @@ const App = () => {
 
   return (
     <>
-      <h1 className={styles.title}>Facebook Downloader</h1>
+      <h1 className={styles.title}>Facebook Video Downloader</h1>
+
+      <h3 className={styles.subtitle}>The 'Facebook Video Downloader' is a simple React App, created to download facebook videos from their links.</h3>
       <Card >
         <Form />
         {/* <p>Está rodando - {running.toString()}</p>
         <p>Progress - {progress}</p> */}
 
-        {running ? 'Aguardando esperar de digitar' : ''}
-        <ProgressBar progress={progress} />
+        {running ?
+          <>
+            <span className={styles.blink_me}>Waiting until stop typing</span>
+            <ProgressBar progress={progress} />
+          </>
+          : ''}
 
-        <button
+        {/* <button
           onClick={() => {
             setRunning(false);
             setProgress(0);
@@ -65,10 +73,8 @@ const App = () => {
         </button>
         <button onClick={() => setRunning(!running)}>
           {running ? "Stop" : "Start"}
-        </button>
+        </button> */}
 
-
-        <p>{ctx.isTyping ? 'Está digitando' : 'Não está digitando'}</p>
       </Card>
     </>
   );

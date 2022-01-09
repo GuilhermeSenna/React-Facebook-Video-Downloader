@@ -3,14 +3,6 @@ import Input from '../UI/Input';
 import styles from './Form.module.css'
 
 const Form = () => {
-
-    const [running, setRunning] = useState(false);
-    const [progress, setProgress] = useState(0);
-
-    const onLinkHandler = (link) => {
-        console.log(link)
-    }
-
     return (
         <>
             <form>
@@ -19,11 +11,11 @@ const Form = () => {
                     Link do download
                 </label> */}
                     <Input
-                        sendLink={onLinkHandler}
-                        label="Link do download"
+                        label="Facebook Video URL"
                         input={{
                             id: Math.random().toString(),
-                            type: 'text'
+                            type: "text",
+                            placeholder: "https://www.facebook.com/___/videos/12345"
                         }} />
                 </div>
             </form>
