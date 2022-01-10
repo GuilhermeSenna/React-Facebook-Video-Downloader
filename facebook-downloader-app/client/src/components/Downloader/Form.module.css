@@ -23,6 +23,11 @@
     margin-bottom: 1rem;
 }
 
+.form-control button{
+    position: absolute;
+    margin-right: 200px;
+}
+
 .button-form{
     text-align: right;
 }

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../UI/Input';
-import styles from './Form.module.css'
+import styles from './Form_teste.module.css'
 
-const Form = () => {
+const Form_teste = () => {
     return (
         <>
             <form>
-                <div className={styles['form-control']}>
+                <div className={styles['form-control-teste']}>
                     {/* <label>
                     Link do download
                 </label> */}
@@ -17,10 +17,11 @@ const Form = () => {
                             type: "text",
                             placeholder: "https://www.facebook.com/___/videos/12345"
                         }} />
+                    <button>Submit</button>
                 </div>
             </form>
         </>
     );
 }
 
-export default Form;
+export default Form_teste;

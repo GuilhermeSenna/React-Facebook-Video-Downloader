@@ -5,6 +5,7 @@ import Card from './components/UI/Card';
 import Form from './components/Downloader/Form';
 import { ProgressBar } from './components/UI/ProgressBar.css';
 import LinkContext from './store/link-context';
+import Form_teste from './components/Downloader/Form_teste';
 
 let interval = undefined;
 
@@ -55,6 +56,7 @@ const App = () => {
       <h3 className={styles.subtitle}>The 'Facebook Video Downloader' is a simple React App, created to download facebook videos from their links.</h3>
       <Card >
         <Form />
+        <Form_teste />
         {/* <p>Está rodando - {running.toString()}</p>
         <p>Progress - {progress}</p> */}
 

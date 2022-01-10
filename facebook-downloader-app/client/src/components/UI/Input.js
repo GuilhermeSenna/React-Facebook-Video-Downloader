@@ -25,6 +25,7 @@ const Input = props => {
             <input {...props.input}
                 value={link}
                 onChange={event => { onChangeHandler(event.target.value) }} />
+            {/* <button>Go</button> */}
         </>
     )
 };
