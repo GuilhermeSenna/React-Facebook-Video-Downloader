@@ -5,6 +5,7 @@ import Card from './components/UI/Card';
 import Form from './components/Downloader/Form';
 import { ProgressBar } from './components/UI/ProgressBar.css';
 import LinkContext from './store/link-context';
+import Footer from './components/UI/Footer';
 
 let interval = undefined;
 
@@ -12,6 +13,9 @@ const App = () => {
 
 
   const ctx = useContext(LinkContext)
+
+  const [running, setRunning] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (ctx.isTyping && ctx.link.trim().length > 0) {
@@ -23,9 +27,6 @@ const App = () => {
       setRunning(false);
     }
   }, [ctx, ctx.isTyping])
-
-  const [running, setRunning] = useState(false);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (running) {
@@ -81,6 +82,7 @@ const App = () => {
         </button> */}
 
       </Card>
+      <Footer />
     </>
   );
 }
