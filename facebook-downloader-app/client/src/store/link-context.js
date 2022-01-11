@@ -6,6 +6,7 @@ const LinkContext = React.createContext({
     isTyping: false,
     onStartTyping: () => { },
     onStopTyping: () => { },
+    onClearInput: () => { }
 });
 
 
@@ -23,11 +24,16 @@ export const LinkContextProvider = props => {
         setIsTyping(false);
     }
 
+    const onClearInput = () => {
+        setLink('')
+    }
+
     return <LinkContext.Provider value={{
         link: link,
         isTyping: isTyping,
         onStartTyping: onStartTyping,
-        onStopTyping: onStopTyping
+        onStopTyping: onStopTyping,
+        onClearInput: onClearInput
     }}
     >{props.children}</LinkContext.Provider>
 }

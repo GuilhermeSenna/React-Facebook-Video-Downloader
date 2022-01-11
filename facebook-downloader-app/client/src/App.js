@@ -5,7 +5,6 @@ import Card from './components/UI/Card';
 import Form from './components/Downloader/Form';
 import { ProgressBar } from './components/UI/ProgressBar.css';
 import LinkContext from './store/link-context';
-import Form_teste from './components/Downloader/Form_teste';
 
 let interval = undefined;
 
@@ -15,23 +14,24 @@ const App = () => {
   const ctx = useContext(LinkContext)
 
   useEffect(() => {
-    if (ctx.isTyping) {
+    if (ctx.isTyping && ctx.link.trim().length > 0) {
       setProgress(0)
       setRunning(true);
       ctx.onStopTyping();
+    } else if (ctx.link.trim().length === 0) {
+      setProgress(0)
+      setRunning(false);
     }
-  }, [ctx.isTyping])
+  }, [ctx, ctx.isTyping])
 
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState(0);
-
-
 
   useEffect(() => {
     if (running) {
       interval = setInterval(() => {
         setProgress((prev) => prev + 1);
-      }, 20);
+      }, 25);
     } else {
       clearInterval(interval);
     }
@@ -55,8 +55,9 @@ const App = () => {
 
       <h3 className={styles.subtitle}>The 'Facebook Video Downloader' is a simple React App, created to download facebook videos from their links.</h3>
       <Card >
+        <h3 className={styles.label}>Facebook video URL</h3>
+        {/* <Form /> */}
         <Form />
-        <Form_teste />
         {/* <p>Está rodando - {running.toString()}</p>
         <p>Progress - {progress}</p> */}
 

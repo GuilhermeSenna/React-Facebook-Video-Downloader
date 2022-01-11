@@ -1,4 +1,4 @@
-.form-controls {
+/* .form-controls {
     display:block;
     flex-wrap: wrap;
     gap: 1rem;
@@ -30,4 +30,45 @@
 
 .button-form{
     text-align: right;
+} */
+
+.form-control-teste{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0 auto; */
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #086E7D;
+    height: 40px;
+    padding: 0px 3px 0px 8px;
+}
+
+.form-control-teste input{
+    padding: 4px;
+    flex-grow: 1;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin-right: 8px;
+}
+
+.focus {
+    background: yellow;
+    color: #000;
+    border: 1px solid red;
+}
+
+.form-control-teste button{
+    cursor: pointer;
+    height: 31px;
+    width: 70px;
+    background-color: #FFC900;
+    border: 1px solid #086E7D;
+    color: #086E7D;
+    /* font-size: 100%; */
+    text-transform: uppercase;
+    /* border-style: none; */
+    border-radius: 10px;
 }
