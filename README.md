@@ -4,6 +4,7 @@
 
 Demonstration:
 
+![demonstration of the app](demo.gif)
 
 ---
 
