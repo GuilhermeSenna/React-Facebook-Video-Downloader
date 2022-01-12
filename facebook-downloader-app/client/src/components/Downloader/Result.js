@@ -9,8 +9,8 @@ const Result = () => {
             <div className={styles.content}>
                 <img src={videoImage}></img>
                 <div className={styles.contentText}>
-                    <h1>Title: <span className={styles.normalText}>Video 1</span></h1>
-                    <h2>Description: <span className={styles.normalText}>A random facebook video.</span></h2>
+                    <h1>Title: <span className={styles.normalText_title}>Video 1</span></h1>
+                    <h2>Description: <span className={styles.normalText_description}>A random facebook video.</span></h2>
 
                     <button>Download SD</button>
                     <button>Download HD</button>
