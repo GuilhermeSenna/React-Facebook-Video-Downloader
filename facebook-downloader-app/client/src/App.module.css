@@ -30,7 +30,7 @@ body {
 
 .label {
   color: #086E7D;
-  font-size: larger;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
@@ -51,7 +51,7 @@ body {
 
 .blink_me {
   animation: blinker 1s linear infinite;
-  font-size: 14px;
+  font-size: 1rem;
   /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   font-weight: lighter;
   font-style: italic;

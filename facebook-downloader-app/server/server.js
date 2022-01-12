@@ -13,7 +13,7 @@ app.post('/', async (req, res) => {
     url = req.body.url
 
     await facebookDownloader
-        .getInfo(url)
+        .getInfo('fb.watch/5deuxC9PhA')
         .then((info) =>
             res.send(info)
             // res.send(JSON.stringify(info, null, 2)
